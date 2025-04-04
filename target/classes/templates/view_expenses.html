@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+
+    <!-- Display success message -->
+    <div th:if="${successMessage}" class="success" th:text="${successMessage}"></div>
+
+    <!-- Display error message -->
+    <div th:if="${errorMessage}" class="error" th:text="${errorMessage}"></div>
+
+    <!-- Display search message -->
+    <div th:if="${message}" th:text="${message}"></div>
+
+    <form action="/search" method="get">
+        <input type="text" name="keyword" placeholder="Search by name or category" required />
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+    <a href="/add">Add New Expense</a>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="expense : ${expenses}">
+                <td th:text="${expense.id}"></td>
+                <td th:text="${expense.name}"></td>
+                <td th:text="${expense.amount}"></td>
+                <td th:text="${expense.category}"></td>
+                <td th:text="${expense.date}"></td>
+                <td>
+                    <a th:href="@{/update/{id}(id=${expense.id})}">Update</a>
+                    <a th:href="@{/delete/{id}(id=${expense.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

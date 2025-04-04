@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f384b0;
+    /* Light pink shade */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Forms */
+form {
+    display: inline-block;
+    background: #f384b0;
+
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input,
+button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+button {
+    background-color: #c82980;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #a61f66;
+    /* Darker shade for hover effect */
+}
+
+/* Table */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #c82980;
+    color: white;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #c82980;
+    font-weight: bold;
+    margin: 5px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #a61f66;
+    /* Matching darker shade for link hover */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    button {
+        width: 80%;
+        /* Optional: makes buttons wider on small screens */
+    }
+}
